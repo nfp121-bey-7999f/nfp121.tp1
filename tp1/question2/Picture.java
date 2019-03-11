@@ -20,6 +20,8 @@ public class Picture {
     private Square window;
     private Triangle roof;
     private Circle sun;
+    private Circle suny;
+    public boolean terrefixe=true;
 
     /**
      * Constructor for objects of class Picture
@@ -50,11 +52,20 @@ public class Picture {
         roof.makeVisible();
 
         sun = new Circle();
-        sun.changeColor("yellow");
+        sun.changeColor("blue");
         sun.moveHorizontal(180);
         sun.moveVertical(-10);
         sun.changeSize(60);
         sun.makeVisible();
+        
+        suny = new Circle();
+        suny.changeColor("yellow");
+        suny.moveHorizontal(180);
+        suny.moveVertical(-10);
+        suny.changeSize(32);
+        suny.makeVisible();
+        
+        couchersoleil(suny);
     }
 
     /**
@@ -82,5 +93,10 @@ public class Picture {
             sun.changeColor("yellow");
         }
     }
+    public void couchersoleil(Circle c) {
+  
+    if(terrefixe)
+    c.slowMoveHorizontal(100);
+}
 
 }
